@@ -12,7 +12,7 @@ playlists = []
 
 
 @app.route('/')
-def hello_world():
+def gatinha():
     return render_template('index.html', playlist=enumerate(playlists))
 
 
@@ -25,11 +25,11 @@ def add_playlist():
 
     playlists.append(playlist_form)
 
-    return redirect(url_for('hello_world'))
+    return redirect(url_for('gatinha'))
 
 
 @app.route('/remove-playlist/<int:playlist>', methods=['POST'])
 def remove_playlist(playlist):
     del(playlists[playlist])
 
-    return redirect(url_for('hello_world'))
+    return redirect(url_for('gatinha'))
